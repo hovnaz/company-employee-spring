@@ -61,13 +61,4 @@ public class EmployeeController {
         return "redirect:/employee/list";
     }
 
-    @GetMapping("/employee/view")
-    public String viewPage(@RequestAttribute int id, ModelMap modelMap) {
-        Optional<Employee> employee = employeeRepository.findById(id);
-        if (employee.isPresent()) {
-            modelMap.addAttribute("employee", employee);
-            return "employee/view";
-        }
-        return "redirect:/employee";
-    }
 }

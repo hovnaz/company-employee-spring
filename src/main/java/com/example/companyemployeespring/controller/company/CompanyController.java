@@ -45,14 +45,4 @@ public class CompanyController {
         }
         return "redirect:/company/list";
     }
-
-    @GetMapping("/company/view")
-    public String addPage(@RequestAttribute int id, ModelMap modelMap) {
-        Optional<Company> company = companyRepository.findById(id);
-        if (company.isPresent()) {
-            modelMap.addAttribute("company", company);
-            return "company/view";
-        }
-        return "redirect:/company/list";
-    }
 }
