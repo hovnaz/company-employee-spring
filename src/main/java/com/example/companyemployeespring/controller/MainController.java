@@ -1,2 +1,5 @@
-package com.example.companyemployeespring.controller;public class MainController {
+package com.example.companyemployeespring.controller;
+
+
+public class MainController {
 }
