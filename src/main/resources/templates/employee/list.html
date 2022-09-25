@@ -5,6 +5,38 @@
     <title>Employee List</title>
 </head>
 <body>
-
+<a href="/employee/add"><button>add employee</button></a>
+<table>
+    <thead>
+    <tr>
+        <th>picture</th>
+        <th>name</th>
+        <th>surname</th>
+        <th>email</th>
+        <th>phone</th>
+        <th>salary</th>
+        <th>position</th>
+        <th>company</th>
+        <th>action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee: ${employees}">
+        <td>#</td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.surname}"></td>
+        <td th:text="${employee.email}"></td>
+        <td th:text="${employee.phoneNumber}"></td>
+        <td th:text="${employee.salary}"></td>
+        <td th:text="${employee.position}"></td>
+        <td th:text="${employee.getCompany eq null ? 'not company' : employee.getCompany().name}"></td>
+        <td>
+            <div>
+                <a th:href="@{/employee/delete(id=${employee.id})}">delete</a>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

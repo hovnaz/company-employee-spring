@@ -5,6 +5,29 @@
     <title>Company List</title>
 </head>
 <body>
+<h1>Companies</h1>
+
+<a href="/company/add"><button>add Company</button></a>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>action</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="company: ${companies}">
+            <td th:text="${company.name}"></td>
+            <td th:text="${company.size}"></td>
+            <td>
+                <div>
+                    <a th:href="@{/company/delete(id=${company.id})}">delete</a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 </body>
 </html>

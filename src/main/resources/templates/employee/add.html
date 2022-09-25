@@ -5,6 +5,22 @@
     <title>Employee Add</title>
 </head>
 <body>
-
+    <form action="/employee/add" method="post">
+        <input type="text" placeholder="name" required name="name">
+        <input type="text" placeholder="surname" required name="surname">
+        <input type="email" placeholder="email" required name="email">
+        <input type="text" placeholder="phone" required name="phoneNumber">
+        <input type="number" placeholder="salary" required name="salary">
+        <select name="company">
+            <option value="0">unchecked</option>
+            <option th:each="company : ${companies}" th:value="${company.id}" th:text="${company.name}"></option>
+        </select>
+        <select name="position" required>
+            <option value="EMPLOYEE">Employee</option>
+            <option value="MANAGER">Manager</option>
+            <option value="DIRECTOR">Director</option>
+        </select>
+        <input type="submit" value="submit">
+    </form>
 </body>
 </html>

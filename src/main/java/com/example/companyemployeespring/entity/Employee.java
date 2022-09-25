@@ -27,6 +27,6 @@ public class Employee {
     private EmployeePosition position;
     @ManyToOne
     @JoinColumn(name = "company_id")
-    private Company companyId;
+    private Company company;
     private String profilePic;
 }
