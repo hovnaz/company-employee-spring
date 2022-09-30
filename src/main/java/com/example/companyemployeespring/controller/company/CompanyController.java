@@ -1,24 +1,22 @@
 package com.example.companyemployeespring.controller.company;
 
 import com.example.companyemployeespring.entity.Company;
-import com.example.companyemployeespring.entity.Employee;
 import com.example.companyemployeespring.repository.CompanyRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Controller
 public class CompanyController {
 
     @Autowired
     CompanyRepository companyRepository;
+
 
     @GetMapping("/company/list")
     public String listPage(ModelMap modelMap) {

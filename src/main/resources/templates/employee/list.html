@@ -22,7 +22,9 @@
     </thead>
     <tbody>
     <tr th:each="employee: ${employees}">
-        <td>#</td>
+        <td>
+            <img th:if="${employee.profilePic != null}" th:src="@{/employee/getImage(fileName=${employee.profilePic})}"  width="40" height="40">
+        </td>
         <td th:text="${employee.name}"></td>
         <td th:text="${employee.surname}"></td>
         <td th:text="${employee.email}"></td>

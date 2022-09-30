@@ -5,7 +5,7 @@
     <title>Employee Add</title>
 </head>
 <body>
-    <form action="/employee/add" method="post">
+    <form action="/employee/add" method="post" enctype="multipart/form-data">
         <input type="text" placeholder="name" required name="name">
         <input type="text" placeholder="surname" required name="surname">
         <input type="email" placeholder="email" required name="email">
@@ -20,6 +20,7 @@
             <option value="MANAGER">Manager</option>
             <option value="DIRECTOR">Director</option>
         </select>
+        <input type="file" name="userImage">
         <input type="submit" value="submit">
     </form>
 </body>
