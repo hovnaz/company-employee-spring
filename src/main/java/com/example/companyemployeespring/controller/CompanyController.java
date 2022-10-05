@@ -1,4 +1,4 @@
-package com.example.companyemployeespring.controller.company;
+package com.example.companyemployeespring.controller;
 
 import com.example.companyemployeespring.entity.Company;
 import com.example.companyemployeespring.repository.CompanyRepository;

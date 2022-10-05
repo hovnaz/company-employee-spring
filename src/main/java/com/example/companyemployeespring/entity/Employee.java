@@ -29,4 +29,5 @@ public class Employee {
     @JoinColumn(name = "company_id")
     private Company company;
     private String profilePic;
+    private String password;
 }

@@ -1,4 +1,4 @@
-package com.example.companyemployeespring.controller.employee;
+package com.example.companyemployeespring.controller;
 
 import com.example.companyemployeespring.entity.Company;
 import com.example.companyemployeespring.entity.Employee;
@@ -8,6 +8,7 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,9 @@ public class EmployeeController {
 
     @Autowired
     CompanyRepository companyRepository;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     @Value("${example.companyemployeespring.images.folder}")
     private String folderPath;
@@ -55,7 +59,8 @@ public class EmployeeController {
             file.transferTo(newFile);
             employee.setProfilePic(fileName);
         }
-
+        employee.setPassword(passwordEncoder.encode(employee.getPassword()));
+        
         employeeRepository.save(employee);
 
         if (employee.getCompany() != null) {
